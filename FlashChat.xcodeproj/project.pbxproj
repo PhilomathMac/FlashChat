@@ -58,13 +58,37 @@
 			children = (
 				BB627DBE28B3F31000C1DC04 /* AppDelegate.swift */,
 				BB627DC028B3F31000C1DC04 /* SceneDelegate.swift */,
-				BB627DC228B3F31000C1DC04 /* ViewController.swift */,
-				BB627DC428B3F31000C1DC04 /* Main.storyboard */,
+				BB627DD328B3F59A00C1DC04 /* ViewControllers */,
+				BB627DD228B3F59600C1DC04 /* Views */,
+				BB627DD428B3F5A500C1DC04 /* Models */,
 				BB627DC728B3F31100C1DC04 /* Assets.xcassets */,
-				BB627DC928B3F31100C1DC04 /* LaunchScreen.storyboard */,
 				BB627DCC28B3F31100C1DC04 /* Info.plist */,
 			);
 			path = FlashChat;
+			sourceTree = "<group>";
+		};
+		BB627DD228B3F59600C1DC04 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				BB627DC428B3F31000C1DC04 /* Main.storyboard */,
+				BB627DC928B3F31100C1DC04 /* LaunchScreen.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		BB627DD328B3F59A00C1DC04 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				BB627DC228B3F31000C1DC04 /* ViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		BB627DD428B3F5A500C1DC04 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
