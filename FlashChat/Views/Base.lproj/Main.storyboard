@@ -308,6 +308,9 @@
                                             <color key="titleColor" name="BrandLightBlue"/>
                                             <color key="titleShadowColor" name="BrandLightBlue"/>
                                         </state>
+                                        <connections>
+                                            <action selector="loginButtonPressed:" destination="Rxh-er-J08" eventType="touchUpInside" id="0KK-gW-byC"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -338,6 +341,10 @@
                             <constraint firstItem="x92-hQ-N3l" firstAttribute="trailing" secondItem="z60-cU-AVW" secondAttribute="trailing" id="xEj-cM-uGI"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="emailTextField" destination="gtB-bc-5od" id="ufn-NA-TE7"/>
+                        <outlet property="passwordTextField" destination="LY0-3F-d1W" id="oiU-IR-bvc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dS3-LW-DZ8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
