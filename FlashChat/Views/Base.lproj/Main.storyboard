@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="⚡️FlashChat" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="25" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JMy-3f-Cee" customClass="CLTypingLabel" customModule="CLTypingLabel">
-                                <rect key="frame" x="10" y="433" width="408" height="60"/>
+                                <rect key="frame" x="60.333333333333343" y="432" width="307.33333333333326" height="62"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="h8L-nc-RZ7"/>
                                 </constraints>
@@ -36,7 +36,13 @@
                                         </constraints>
                                         <color key="tintColor" name="BrandOrange"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="tinted" title="Register" cornerStyle="capsule"/>
+                                        <buttonConfiguration key="configuration" style="tinted" title="Register" cornerStyle="capsule">
+                                            <color key="baseForegroundColor" name="BrandBlue"/>
+                                            <color key="baseBackgroundColor" name="BrandLightOrange"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <segue destination="8gH-3c-XAb" kind="show" id="4gx-ro-5f7"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ck1-Qo-Cjg">
                                         <rect key="frame" x="0.0" y="78" width="408" height="60"/>
@@ -45,7 +51,13 @@
                                         </constraints>
                                         <color key="tintColor" name="BrandBlue"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="filled" title="Log In" cornerStyle="capsule"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Log In" cornerStyle="capsule">
+                                            <color key="baseForegroundColor" name="BrandLightOrange"/>
+                                            <color key="baseBackgroundColor" name="BrandBlue"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <segue destination="Rxh-er-J08" kind="show" id="XBC-XB-tNZ"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -54,12 +66,12 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="JMy-3f-Cee" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="02P-fN-9Lx"/>
-                            <constraint firstItem="4pD-P7-vR5" firstAttribute="top" relation="greaterThanOrEqual" secondItem="JMy-3f-Cee" secondAttribute="bottom" constant="250" id="Cfa-z2-yUT"/>
+                            <constraint firstItem="4pD-P7-vR5" firstAttribute="top" relation="lessThanOrEqual" secondItem="JMy-3f-Cee" secondAttribute="bottom" constant="250" id="Cfa-z2-yUT"/>
                             <constraint firstItem="4pD-P7-vR5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="I9G-ug-Ber"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="JMy-3f-Cee" secondAttribute="trailing" constant="10" id="M4X-MF-Bde"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="JMy-3f-Cee" secondAttribute="trailing" id="M4X-MF-Bde"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="4pD-P7-vR5" secondAttribute="trailing" constant="10" id="QUd-sW-mBM"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="4pD-P7-vR5" secondAttribute="bottom" constant="10" id="TpD-mb-dp7"/>
-                            <constraint firstItem="JMy-3f-Cee" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="ZbT-SU-9Ow"/>
+                            <constraint firstItem="JMy-3f-Cee" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ZbT-SU-9Ow"/>
                             <constraint firstItem="JMy-3f-Cee" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="ila-cz-LpC"/>
                         </constraints>
                     </view>
@@ -81,7 +93,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ijl-0f-27o" userLabel="EmailView">
-                                <rect key="frame" x="0.0" y="44" width="428" height="177"/>
+                                <rect key="frame" x="0.0" y="88" width="428" height="177"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8Vh-AW-uat" userLabel="EmailTextField">
                                         <rect key="frame" x="48" y="50" width="332" height="45"/>
@@ -105,7 +117,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5aI-ci-cmX" userLabel="PasswordView">
-                                <rect key="frame" x="0.0" y="121" width="428" height="177"/>
+                                <rect key="frame" x="0.0" y="165" width="428" height="177"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xbL-fI-28K" userLabel="PasswordTextField">
                                         <rect key="frame" x="50" y="50" width="328" height="45"/>
@@ -147,7 +159,7 @@
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ulK-IU-JEw"/>
-                        <color key="backgroundColor" name="BrandOrange"/>
+                        <color key="backgroundColor" name="BrandLightOrange"/>
                         <constraints>
                             <constraint firstItem="Ijl-0f-27o" firstAttribute="leading" secondItem="ulK-IU-JEw" secondAttribute="leading" id="EJe-eD-TS6"/>
                             <constraint firstItem="5aI-ci-cmX" firstAttribute="leading" secondItem="ulK-IU-JEw" secondAttribute="leading" id="MIc-Gr-eco"/>
@@ -157,14 +169,16 @@
                             <constraint firstItem="Ijl-0f-27o" firstAttribute="top" secondItem="ulK-IU-JEw" secondAttribute="top" id="zqC-cs-LC5"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="vCa-Ql-mgw"/>
                     <connections>
                         <outlet property="emailTextField" destination="8Vh-AW-uat" id="I0t-KJ-paD"/>
                         <outlet property="passwordTextField" destination="xbL-fI-28K" id="f3u-sr-djo"/>
+                        <segue destination="zWf-FG-vcs" kind="show" identifier="registerToChat" id="U3f-B8-cra"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JbN-tU-nLA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1785" y="-179"/>
+            <point key="canvasLocation" x="2029" y="-183"/>
         </scene>
         <!--Chat View Controller-->
         <scene sceneID="dxp-sU-NdF">
@@ -175,7 +189,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="V3X-k7-QAa">
-                                <rect key="frame" x="0.0" y="44" width="428" height="780"/>
+                                <rect key="frame" x="0.0" y="88" width="428" height="736"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ReusableCell" id="kVT-Ee-hIA">
@@ -236,6 +250,7 @@
                             <constraint firstItem="V3X-k7-QAa" firstAttribute="top" secondItem="gQH-R9-LmL" secondAttribute="top" id="kAO-nt-gA1"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="Gg8-dV-phq"/>
                     <connections>
                         <outlet property="messageTextField" destination="8Hu-Xr-akj" id="OTd-Hl-u8x"/>
                         <outlet property="tableView" destination="V3X-k7-QAa" id="tWK-d1-mlb"/>
@@ -243,7 +258,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xcx-9Y-Oj2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2535.9813084112147" y="155.50755939524839"/>
+            <point key="canvasLocation" x="3003" y="148"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="pq8-Sy-tHF">
@@ -272,7 +287,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3AL-3i-YB3" userLabel="EmailView">
-                                <rect key="frame" x="0.0" y="44" width="428" height="177"/>
+                                <rect key="frame" x="0.0" y="88" width="428" height="177"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gtB-bc-5od" userLabel="EmailTextField">
                                         <rect key="frame" x="48" y="50" width="332" height="45"/>
@@ -296,7 +311,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x92-hQ-N3l" userLabel="PasswordView">
-                                <rect key="frame" x="0.0" y="121" width="428" height="177"/>
+                                <rect key="frame" x="0.0" y="165" width="428" height="177"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LY0-3F-d1W" userLabel="PasswordTextField">
                                         <rect key="frame" x="50" y="50" width="328" height="45"/>
@@ -348,16 +363,21 @@
                             <constraint firstItem="x92-hQ-N3l" firstAttribute="trailing" secondItem="z60-cU-AVW" secondAttribute="trailing" id="xEj-cM-uGI"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="631-TA-5Yl"/>
                     <connections>
                         <outlet property="emailTextField" destination="gtB-bc-5od" id="ufn-NA-TE7"/>
                         <outlet property="passwordTextField" destination="LY0-3F-d1W" id="oiU-IR-bvc"/>
+                        <segue destination="zWf-FG-vcs" kind="show" identifier="loginToChat" id="amP-ax-TAP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dS3-LW-DZ8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1785" y="514"/>
+            <point key="canvasLocation" x="2029" y="511"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="U3f-B8-cra"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="paperplane.fill" catalog="system" width="128" height="118"/>
         <image name="textfield" width="298" height="93"/>
