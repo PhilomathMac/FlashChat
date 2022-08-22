@@ -124,6 +124,9 @@
                                             <color key="titleColor" name="BrandBlue"/>
                                             <color key="titleShadowColor" name="BrandLightBlue"/>
                                         </state>
+                                        <connections>
+                                            <action selector="registerPressed:" destination="8gH-3c-XAb" eventType="touchUpInside" id="0Sd-8f-8xa"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -154,6 +157,10 @@
                             <constraint firstItem="Ijl-0f-27o" firstAttribute="top" secondItem="ulK-IU-JEw" secondAttribute="top" id="zqC-cs-LC5"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="emailTextField" destination="8Vh-AW-uat" id="I0t-KJ-paD"/>
+                        <outlet property="passwordTextField" destination="xbL-fI-28K" id="f3u-sr-djo"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JbN-tU-nLA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
