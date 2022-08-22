@@ -199,6 +199,9 @@
                                         </constraints>
                                         <color key="tintColor" name="BrandLightPurple"/>
                                         <state key="normal" image="paperplane.fill" catalog="system"/>
+                                        <connections>
+                                            <action selector="sendPressed:" destination="zWf-FG-vcs" eventType="touchUpInside" id="xvc-PK-ktl"/>
+                                        </connections>
                                     </button>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Write a message..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8Hu-Xr-akj" userLabel="MessageTextField">
                                         <rect key="frame" x="20" y="10" width="352" height="40"/>
@@ -233,6 +236,10 @@
                             <constraint firstItem="V3X-k7-QAa" firstAttribute="top" secondItem="gQH-R9-LmL" secondAttribute="top" id="kAO-nt-gA1"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="messageTextField" destination="8Hu-Xr-akj" id="OTd-Hl-u8x"/>
+                        <outlet property="tableView" destination="V3X-k7-QAa" id="tWK-d1-mlb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xcx-9Y-Oj2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
