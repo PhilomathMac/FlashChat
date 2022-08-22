@@ -4,6 +4,7 @@
 
 GoogleServices-Info.plist
 Constants.swift
+.DS_Store
 
 ## User settings
 xcuserdata/
