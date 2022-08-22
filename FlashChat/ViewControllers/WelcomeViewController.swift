@@ -15,6 +15,7 @@ class WelcomeViewController: UIViewController {
         super.viewDidLoad()
         
         titleLabel.text = "⚡️FlashChat"
+        runLogoAnimation()
     }
     
     func runLogoAnimation() {
