@@ -14,13 +14,9 @@ class ChatViewController: UIViewController {
     @IBOutlet var messageTextField: UITextField!
     @IBOutlet var logOutButton: UIBarButtonItem!
     
-    var messages = [
-        Message(sender: "Test@test.com", body: "Hey"),
-        Message(sender: "Test1@test.com", body: "Hello"),
-        Message(sender: "Test1@test.com", body: "Are you hungry?"),
-        Message(sender: "Test@test.com", body: "Very"),
-        Message(sender: "Test1@test.com", body: "ASDFHGJFKLSDKUDFHJKSL! SOOOO HUNGRY!")
-    ]
+    var messages = [Message]()
+    
+    let db = Firestore.firestore()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +26,43 @@ class ChatViewController: UIViewController {
         
         tableView.dataSource = self
         tableView.register(UINib(nibName: K.cellNibName, bundle: nil), forCellReuseIdentifier: K.cellIdentifier)
+        
+        loadMessages()
+    }
+    
+    func loadMessages() {
+        // Clear dummy messages
+        messages = []
+        
+        db.collection(K.FStore.collectionName).getDocuments { querySnapshot, error in
+            
+            guard error == nil else {
+                print(error!.localizedDescription)
+                return
+            }
+            
+            guard let snapshotDocs = querySnapshot?.documents else {
+                print("Snapshot empty")
+                return
+            }
+            
+            for doc in snapshotDocs {
+                let data = doc.data()
+                if let sender = data[K.FStore.senderField], let body = data[K.FStore.bodyField], let timestamp : Timestamp = data[K.FStore.dateField] as? Timestamp {
+                    
+                    let newMessage = Message(sender: sender as! String, body: body as! String, date: timestamp.dateValue())
+                    self.messages.append(newMessage)
+                    
+                    // Update the tableView in the main thread
+                    DispatchQueue.main.async {
+                        self.tableView.reloadData()
+                    }
+                    
+                }
+            }
+            
+        }
+        
     }
     
     @IBAction func sendPressed(_ sender: UIButton) {
@@ -37,8 +70,6 @@ class ChatViewController: UIViewController {
         if let messageBody = messageTextField.text, let sender = Auth.auth().currentUser?.email {
             
             // Add message to database
-            let db = Firestore.firestore()
-            
             db.collection(K.FStore.collectionName).addDocument(data: [
                 
                 K.FStore.senderField : sender,
@@ -55,6 +86,7 @@ class ChatViewController: UIViewController {
                 
                 // Clear textfield
                 self.messageTextField.text = ""
+                self.loadMessages()
             }
             
         }
