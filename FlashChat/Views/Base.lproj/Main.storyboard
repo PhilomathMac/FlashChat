@@ -240,7 +240,7 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                 </subviews>
-                                <color key="backgroundColor" name="BrandLightOrange"/>
+                                <color key="backgroundColor" name="BrandLightBlue"/>
                                 <constraints>
                                     <constraint firstItem="8Hu-Xr-akj" firstAttribute="leading" secondItem="FAd-ZH-2df" secondAttribute="leading" constant="20" id="5YB-UO-MWS"/>
                                     <constraint firstItem="rIZ-3P-fcx" firstAttribute="leading" secondItem="8Hu-Xr-akj" secondAttribute="trailing" constant="8" id="gj7-y6-DyY"/>
@@ -252,7 +252,7 @@
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="gQH-R9-LmL"/>
-                        <color key="backgroundColor" name="BrandLightOrange"/>
+                        <color key="backgroundColor" name="BrandLightBlue"/>
                         <constraints>
                             <constraint firstItem="FAd-ZH-2df" firstAttribute="top" secondItem="V3X-k7-QAa" secondAttribute="bottom" constant="8" id="9Nf-Od-gKQ"/>
                             <constraint firstItem="gQH-R9-LmL" firstAttribute="bottom" secondItem="FAd-ZH-2df" secondAttribute="bottom" id="HkY-be-883"/>
