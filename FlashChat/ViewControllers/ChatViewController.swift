@@ -18,7 +18,8 @@ class ChatViewController: UIViewController {
         Message(sender: "Test@test.com", body: "Hey"),
         Message(sender: "Test1@test.com", body: "Hello"),
         Message(sender: "Test1@test.com", body: "Are you hungry?"),
-        Message(sender: "Test@test.com", body: "Very")
+        Message(sender: "Test@test.com", body: "Very"),
+        Message(sender: "Test1@test.com", body: "ASDFHGJFKLSDKUDFHJKSL! SOOOO HUNGRY!")
     ]
     
     override func viewDidLoad() {
@@ -28,6 +29,7 @@ class ChatViewController: UIViewController {
         title = K.appName
         
         tableView.dataSource = self
+        tableView.register(UINib(nibName: K.cellNibName, bundle: nil), forCellReuseIdentifier: K.cellIdentifier)
     }
     
     @IBAction func sendPressed(_ sender: UIButton) {
@@ -57,10 +59,10 @@ extension ChatViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         // Dequeu a cell
-        var newCell = tableView.dequeueReusableCell(withIdentifier: K.cellIdentifier, for: indexPath)
+        var newCell = tableView.dequeueReusableCell(withIdentifier: K.cellIdentifier, for: indexPath)  as! MessageTableViewCell
         
         // Set up the cell properties
-        newCell.textLabel?.text = messages[indexPath.row].body
+        newCell.messageLabel.text = messages[indexPath.row].body
         
         // Return the cell
         return newCell

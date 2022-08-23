@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BB3B869528B54A5E0089DE19 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3B869428B54A5E0089DE19 /* Message.swift */; };
+		BB3B869828B54E150089DE19 /* MessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3B869628B54E150089DE19 /* MessageTableViewCell.swift */; };
+		BB3B869928B54E150089DE19 /* MessageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB3B869728B54E150089DE19 /* MessageTableViewCell.xib */; };
 		BB627DBF28B3F31000C1DC04 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB627DBE28B3F31000C1DC04 /* AppDelegate.swift */; };
 		BB627DC128B3F31000C1DC04 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB627DC028B3F31000C1DC04 /* SceneDelegate.swift */; };
 		BB627DC328B3F31000C1DC04 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB627DC228B3F31000C1DC04 /* WelcomeViewController.swift */; };
@@ -24,6 +27,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BB3B869428B54A5E0089DE19 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Message.swift; path = FlashChat/Helpers/Message.swift; sourceTree = SOURCE_ROOT; };
+		BB3B869628B54E150089DE19 /* MessageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageTableViewCell.swift; sourceTree = "<group>"; };
+		BB3B869728B54E150089DE19 /* MessageTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessageTableViewCell.xib; sourceTree = "<group>"; };
 		BB627DBB28B3F31000C1DC04 /* FlashChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlashChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB627DBE28B3F31000C1DC04 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BB627DC028B3F31000C1DC04 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -90,6 +96,8 @@
 			children = (
 				BB627DC428B3F31000C1DC04 /* Main.storyboard */,
 				BB627DC928B3F31100C1DC04 /* LaunchScreen.storyboard */,
+				BB3B869628B54E150089DE19 /* MessageTableViewCell.swift */,
+				BB3B869728B54E150089DE19 /* MessageTableViewCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -108,6 +116,7 @@
 		BB627DD428B3F5A500C1DC04 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				BB3B869428B54A5E0089DE19 /* Message.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -188,6 +197,7 @@
 			files = (
 				BB627DCB28B3F31100C1DC04 /* LaunchScreen.storyboard in Resources */,
 				BB627DE528B437AC00C1DC04 /* GoogleService-Info.plist in Resources */,
+				BB3B869928B54E150089DE19 /* MessageTableViewCell.xib in Resources */,
 				BB627DC828B3F31100C1DC04 /* Assets.xcassets in Resources */,
 				BB627DC628B3F31000C1DC04 /* Main.storyboard in Resources */,
 			);
@@ -202,9 +212,11 @@
 			files = (
 				BB627DC328B3F31000C1DC04 /* WelcomeViewController.swift in Sources */,
 				BB627DBF28B3F31000C1DC04 /* AppDelegate.swift in Sources */,
+				BB3B869828B54E150089DE19 /* MessageTableViewCell.swift in Sources */,
 				BB627DC128B3F31000C1DC04 /* SceneDelegate.swift in Sources */,
 				BB627DD828B40F0A00C1DC04 /* LoginViewController.swift in Sources */,
 				BB627DE828B52B8200C1DC04 /* Constants.swift in Sources */,
+				BB3B869528B54A5E0089DE19 /* Message.swift in Sources */,
 				BB627DDA28B40F1D00C1DC04 /* ChatViewController.swift in Sources */,
 				BB627DD628B40EF000C1DC04 /* RegisterViewController.swift in Sources */,
 			);

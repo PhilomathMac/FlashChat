@@ -14,7 +14,7 @@ struct K {
     static let loginSegue = "loginToChat"
     
     static let cellIdentifier = "ReusableCell"
-    static let cellNibName = "MessageCell"
+    static let cellNibName = "MessageTableViewCell"
     
     struct FStore {
         static let collectionName = "messages"
