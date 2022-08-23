@@ -12,21 +12,26 @@ class LoginViewController: UIViewController {
 
     @IBOutlet var emailTextField: UITextField!
     @IBOutlet var passwordTextField: UITextField!
+    @IBOutlet var errorLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        errorLabel.alpha = 0
 
         // Do any additional setup after loading the view.
     }
     
     @IBAction func loginButtonPressed(_ sender: UIButton) {
         
-        // TODO: Have an errorLabel display the error to the user if an error is encountered
+        errorLabel.alpha = 0
+        
         if let cleanedEmail = emailTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines), let cleanedPassword = passwordTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) {
             
             Auth.auth().signIn(withEmail: cleanedEmail, password: cleanedPassword) { dataResult, error in
                 
                 guard error == nil else {
-                    print(error!.localizedDescription)
+                    self.errorLabel.text = error!.localizedDescription
+                    self.errorLabel.alpha = 1
                     return
                 }
                 
