@@ -60,6 +60,8 @@ class ChatViewController: UIViewController {
                     // Update the tableView in the main thread
                     DispatchQueue.main.async {
                         self.tableView.reloadData()
+                        let indexPath = IndexPath(row: self.messages.count - 1, section: 0)
+                        self.tableView.scrollToRow(at: indexPath, at: .top, animated: true)
                     }
                     
                 }
@@ -89,12 +91,12 @@ class ChatViewController: UIViewController {
                 }
                 
                 // Clear textfield
-                self.messageTextField.text = ""
-                self.loadMessages()
+                DispatchQueue.main.async {
+                    self.messageTextField.text = ""
+                    self.loadMessages()
+                }
             }
-            
         }
-        
     }
     
     @IBAction func logOutPressed(_ sender: UIBarButtonItem) {
