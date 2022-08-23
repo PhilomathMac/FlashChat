@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import FirebaseAuth
+import Firebase
 
 class ChatViewController: UIViewController {
 
@@ -33,6 +33,32 @@ class ChatViewController: UIViewController {
     }
     
     @IBAction func sendPressed(_ sender: UIButton) {
+        
+        if let messageBody = messageTextField.text, let sender = Auth.auth().currentUser?.email {
+            
+            // Add message to database
+            let db = Firestore.firestore()
+            
+            db.collection(K.FStore.collectionName).addDocument(data: [
+                
+                K.FStore.senderField : sender,
+                K.FStore.bodyField : messageBody,
+                K.FStore.dateField : Date()
+                
+            ]) { error in
+                
+                guard error == nil else {
+                    //TODO: Display error to user
+                    print(error!.localizedDescription)
+                    return
+                }
+                
+                // Clear textfield
+                self.messageTextField.text = ""
+            }
+            
+        }
+        
     }
     
     @IBAction func logOutPressed(_ sender: UIBarButtonItem) {
