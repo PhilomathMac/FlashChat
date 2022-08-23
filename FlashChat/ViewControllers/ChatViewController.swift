@@ -32,9 +32,8 @@ class ChatViewController: UIViewController {
     
     func loadMessages() {
         // Clear dummy messages
-        messages = []
         
-        db.collection(K.FStore.collectionName).getDocuments { querySnapshot, error in
+        db.collection(K.FStore.collectionName).order(by: K.FStore.dateField).addSnapshotListener { querySnapshot, error in
             
             guard error == nil else {
                 print(error!.localizedDescription)
@@ -45,6 +44,8 @@ class ChatViewController: UIViewController {
                 print("Snapshot empty")
                 return
             }
+            
+            self.messages = []
             
             for doc in snapshotDocs {
                 let data = doc.data()
@@ -74,7 +75,7 @@ class ChatViewController: UIViewController {
                 
                 K.FStore.senderField : sender,
                 K.FStore.bodyField : messageBody,
-                K.FStore.dateField : Date()
+                K.FStore.dateField : Date().timeIntervalSince1970
                 
             ]) { error in
                 
@@ -128,3 +129,24 @@ extension ChatViewController: UITableViewDataSource {
     }
     
 }
+
+/*
+ MY ORGINAL SOLUTION TO ORDERING DATA FROM FIRESTORE BY DATE
+ 
+ if let sender = data[K.FStore.senderField], let body = data[K.FStore.bodyField], let timestamp : Timestamp = data[K.FStore.dateField] as? Timestamp {
+     
+     let newMessage = Message(sender: sender as! String, body: body as! String, date: timestamp.dateValue())
+     self.messages.append(newMessage)
+     self.messages = self.messages.sorted { message1, message2 in
+         
+         return message1.date < message2.date
+         
+     }
+     
+     // Update the tableView in the main thread
+     DispatchQueue.main.async {
+         self.tableView.reloadData()
+     }
+     
+ }
+ */
