@@ -17,6 +17,7 @@ class ChatViewController: UIViewController {
     var messages = [Message]()
     
     let db = Firestore.firestore()
+    var listener: ListenerRegistration?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,7 +34,9 @@ class ChatViewController: UIViewController {
     func loadMessages() {
         // Clear dummy messages
         
-        db.collection(K.FStore.collectionName).order(by: K.FStore.dateField).addSnapshotListener { querySnapshot, error in
+        listener = db.collection(K.FStore.collectionName)
+            .order(by: K.FStore.dateField)
+            .addSnapshotListener { querySnapshot, error in
             
             guard error == nil else {
                 print(error!.localizedDescription)
@@ -57,6 +60,8 @@ class ChatViewController: UIViewController {
                     // Update the tableView in the main thread
                     DispatchQueue.main.async {
                         self.tableView.reloadData()
+                        let indexPath = IndexPath(row: self.messages.count - 1, section: 0)
+                        self.tableView.scrollToRow(at: indexPath, at: .top, animated: true)
                     }
                     
                 }
@@ -75,7 +80,7 @@ class ChatViewController: UIViewController {
                 
                 K.FStore.senderField : sender,
                 K.FStore.bodyField : messageBody,
-                K.FStore.dateField : Date().timeIntervalSince1970
+                K.FStore.dateField : Date()
                 
             ]) { error in
                 
@@ -86,15 +91,19 @@ class ChatViewController: UIViewController {
                 }
                 
                 // Clear textfield
-                self.messageTextField.text = ""
-                self.loadMessages()
+                DispatchQueue.main.async {
+                    self.messageTextField.text = ""
+                    self.loadMessages()
+                }
             }
-            
         }
-        
     }
     
     @IBAction func logOutPressed(_ sender: UIBarButtonItem) {
+        
+        if let listener = listener {
+            listener.remove()
+        }
         
         do {
             try Auth.auth().signOut()
@@ -115,13 +124,31 @@ extension ChatViewController: UITableViewDataSource {
         return messages.count
     }
     
+    /// Set up each new cell
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let message = messages[indexPath.row]
         
         // Dequeu a cell
         let newCell = tableView.dequeueReusableCell(withIdentifier: K.cellIdentifier, for: indexPath)  as! MessageTableViewCell
         
         // Set up the cell properties
-        newCell.messageLabel.text = messages[indexPath.row].body
+        newCell.messageLabel.text = message.body
+        
+        if message.sender == Auth.auth().currentUser?.email {
+            // This message was sent by me
+            newCell.leftImageView.isHidden = true
+            newCell.rightImageView.isHidden = false
+            newCell.messageBubble.backgroundColor = UIColor(named: K.BrandColors.darkBlue)
+            newCell.messageLabel.textColor = .white
+            
+        } else {
+            // This message was sent by someone else
+            newCell.leftImageView.isHidden = false
+            newCell.rightImageView.isHidden = true
+            newCell.messageBubble.backgroundColor = UIColor(named: K.BrandColors.lightOrange)
+            newCell.messageLabel.textColor = UIColor(named: K.BrandColors.darkBlue)
+        }
         
         // Return the cell
         return newCell
