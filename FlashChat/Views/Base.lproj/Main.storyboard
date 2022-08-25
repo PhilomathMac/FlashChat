@@ -102,7 +102,7 @@
                                         <rect key="frame" x="48" y="50" width="332" height="45"/>
                                         <color key="textColor" name="BrandOrange"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="next"/>
                                     </textField>
                                 </subviews>
                                 <constraints>
@@ -127,7 +127,7 @@
                                         <rect key="frame" x="50" y="50" width="328" height="45"/>
                                         <color key="textColor" name="BrandOrange"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="go" secureTextEntry="YES"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T4F-hc-2EI">
                                         <rect key="frame" x="0.0" y="125" width="428" height="52"/>
@@ -227,7 +227,7 @@
                                         </constraints>
                                         <color key="textColor" name="BrandPurple"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="send" enablesReturnKeyAutomatically="YES"/>
                                     </textField>
                                 </subviews>
                                 <color key="backgroundColor" name="BrandLightBlue"/>
@@ -313,7 +313,7 @@
                                         <rect key="frame" x="48" y="50" width="332" height="45"/>
                                         <color key="textColor" name="BrandOrange"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="next"/>
                                     </textField>
                                 </subviews>
                                 <constraints>
@@ -338,7 +338,7 @@
                                         <rect key="frame" x="50" y="50" width="328" height="45"/>
                                         <color key="textColor" name="BrandOrange"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="go" secureTextEntry="YES"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ad2-js-HfY">
                                         <rect key="frame" x="0.0" y="125" width="428" height="52"/>
