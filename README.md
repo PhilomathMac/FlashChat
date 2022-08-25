@@ -68,11 +68,11 @@ NavigationDesign().navigationSetting(naviController: someUIViewController)
 ```
 
 ```swift
-\*
+/*
 You may have noticed even the completed project has a bug in it if you are on Xcode 11.4 (or possible numbers above this).
 The NavBar title on the chat viewcontroller is black and does not take on the white colour which is set in the inspector as it did in previous versions of Xcode.  This appears to be a bug in Xcode but here is the fix.
 Add these lines to your app delegate in the didFinishLaunchingWithOptions method.
-*\
+*/
 if #available(iOS 13.0, *) {
 let appearance = UINavigationBarAppearance()
 appearance.titleTextAttributes = [
@@ -81,14 +81,14 @@ appearance.largeTitleTextAttributes = [
 NSAttributedString.Key.foregroundColor: UIColor.white]
 UINavigationBar.appearance().barTintColor = UIColor(named: K.BrandColors.blue)
 }
-\*
+/*
 Here is the background to the issue on stack overflow.
 https://stackoverflow.com/questions/60848786/xcode-11-4-navigations-title-color-gone-black-from-storyboard
 
 OR
 
 If you have this problem too, change the Navigation Bar Tint to "Default" and this solve it, then in your AppDelegate.swift, inside the didFinishLaunchingWithOptions function put this:
-*\
+*/
 UINavigationBar.appearance().barTintColor = UIColor(named: K.BrandColors.blue)
 ```
 
