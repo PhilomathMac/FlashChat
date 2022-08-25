@@ -146,21 +146,27 @@ extension ChatViewController: UITableViewDataSource {
             // This message was sent by me
             newCell.leftImageView.isHidden = true
             newCell.rightImageView.isHidden = false
+            
             newCell.leftDateLabel.isHidden = true
             newCell.rightDateLabel.isHidden = false
             newCell.rightDateLabel.text = message.dateString
+            
             newCell.messageBubble.backgroundColor = UIColor(named: K.BrandColors.darkBlue)
             newCell.messageLabel.textColor = .white
+            newCell.messageLabel.textAlignment = .right
             
         } else {
             // This message was sent by someone else
             newCell.leftImageView.isHidden = false
             newCell.rightImageView.isHidden = true
+            
             newCell.leftDateLabel.isHidden = false
             newCell.rightDateLabel.isHidden = true
             newCell.leftDateLabel.text = message.dateString
+            
             newCell.messageBubble.backgroundColor = UIColor(named: K.BrandColors.lightOrange)
             newCell.messageLabel.textColor = UIColor(named: K.BrandColors.darkBlue)
+            newCell.messageLabel.textAlignment = .left
         }
         
         // Return the cell
