@@ -23,10 +23,8 @@ A simple messaging app that uses a Firebase database to store and retrieve user 
 
 ## Future Features / Fixes
 * Add time and date under each chat message [helpful link](https://www.udemy.com/course/ios-13-app-development-bootcamp/learn/lecture/18002985#questions/13254672)
-* Set keyboard return key to "Go" on authentication screens and initiate authentication methods [helpful link](https://www.udemy.com/course/ios-13-app-development-bootcamp/learn/lecture/18002985#questions/12308842)
-* Set keyboard return key to "Return" on chat screen and initiate saving chat [helpful link](https://www.udemy.com/course/ios-13-app-development-bootcamp/learn/lecture/18002985#questions/12308842)
 * Implement forgot password [helpful link](https://www.udemy.com/course/ios-13-app-development-bootcamp/learn/lecture/18002985#questions/13254672)
-* Fix keyboard covering the screen [helpful link?](https://www.udemy.com/course/ios-13-app-development-bootcamp/learn/lecture/16813360#questions/17048402)
+* Implement secure password validation
 * Fix navBar appearance 
 
 Code to Try:
