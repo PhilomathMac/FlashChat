@@ -28,6 +28,8 @@ class ChatViewController: UIViewController {
         tableView.dataSource = self
         tableView.register(UINib(nibName: K.cellNibName, bundle: nil), forCellReuseIdentifier: K.cellIdentifier)
         
+        messageTextField.delegate = self
+        
         loadMessages()
     }
     
@@ -71,8 +73,7 @@ class ChatViewController: UIViewController {
         
     }
     
-    @IBAction func sendPressed(_ sender: UIButton) {
-        
+    func sendMessage() {
         if let messageBody = messageTextField.text, let sender = Auth.auth().currentUser?.email {
             
             // Add message to database
@@ -97,6 +98,12 @@ class ChatViewController: UIViewController {
                 }
             }
         }
+    }
+    
+    @IBAction func sendPressed(_ sender: UIButton) {
+        
+        sendMessage()
+        
     }
     
     @IBAction func logOutPressed(_ sender: UIBarButtonItem) {
@@ -153,6 +160,18 @@ extension ChatViewController: UITableViewDataSource {
         // Return the cell
         return newCell
         
+    }
+    
+}
+
+// MARK: - TextFieldDelegate
+
+extension ChatViewController: UITextFieldDelegate {
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        sendMessage()
+        return true
     }
     
 }
