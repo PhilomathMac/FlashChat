@@ -16,6 +16,8 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        emailTextField.delegate = self
+        passwordTextField.delegate = self
         errorLabel.alpha = 0
 
         // Do any additional setup after loading the view.
@@ -23,6 +25,11 @@ class LoginViewController: UIViewController {
     
     @IBAction func loginButtonPressed(_ sender: UIButton) {
         
+        loginUser()
+    
+    }
+    
+    func loginUser() {
         errorLabel.alpha = 0
         
         if let cleanedEmail = emailTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines), let cleanedPassword = passwordTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) {
@@ -40,7 +47,14 @@ class LoginViewController: UIViewController {
             }
         }
     }
-    
-    // MARK: - Navigation
+}
 
+extension LoginViewController: UITextFieldDelegate {
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        loginUser()
+        return true
+    }
+    
 }
