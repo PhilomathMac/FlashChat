@@ -16,11 +16,20 @@ class RegisterViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        emailTextField.delegate = self
+        passwordTextField.delegate = self
 
         errorLabel.alpha = 0
     }
     
     @IBAction func registerPressed(_ sender: UIButton) {
+        
+        registerUser()
+        
+    }
+    
+    func registerUser() {
         
         // TODO: Make a function in a model to verify the email is in email format else return nil and error
         // TODO: Make a function in a model to verify the password is complicated enough else return nil and error
@@ -35,18 +44,21 @@ class RegisterViewController: UIViewController {
                     print(error!.localizedDescription)
                     return
                 }
-                
+                // TODO: Refactor so segue is in its own function. registerUser will need to return a bool for if registration was successful and segue only occurs if registration was successful
                 self.performSegue(withIdentifier: K.registerSegue, sender: self)
                 
                 
             }
         }
-        
-        
-        
-        
+    }
+}
+
+extension RegisterViewController: UITextFieldDelegate {
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        registerUser()
+        return true
     }
     
-    // MARK: - Navigation
-
 }
