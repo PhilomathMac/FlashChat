@@ -13,6 +13,8 @@ class MessageTableViewCell: UITableViewCell {
     @IBOutlet var messageLabel: UILabel!
     @IBOutlet var leftImageView: UIImageView!
     @IBOutlet var rightImageView: UIImageView!
+    @IBOutlet var leftDateLabel: UILabel!
+    @IBOutlet var rightDateLabel: UILabel!
     
     override func awakeFromNib() {
         // Nib is an old name for .xib

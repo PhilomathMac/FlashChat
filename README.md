@@ -22,10 +22,9 @@ A simple messaging app that uses a Firebase database to store and retrieve user 
 * Segues
 
 ## Future Features / Fixes
-* Add time and date under each chat message [helpful link](https://www.udemy.com/course/ios-13-app-development-bootcamp/learn/lecture/18002985#questions/13254672)
 * Implement forgot password [helpful link](https://www.udemy.com/course/ios-13-app-development-bootcamp/learn/lecture/18002985#questions/13254672)
 * Implement secure password validation
-* Fix navBar appearance 
+* Fix navBar bag when keyboard activated and tableview scrolled all the way to the top 
 
 Code to Try:
 ```swift
